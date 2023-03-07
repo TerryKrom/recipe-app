@@ -2,18 +2,8 @@ const apiKey = 'b02da1fe54764d10b9cb8afc0e7353e4';
 const searchInput = document.querySelector('#search');
 const recipeContainer = document.querySelector('#recipes');
 
-const btn_mobile = document.getElementById('btn-mobile')
-btn_mobile.addEventListener('click', function(){
-  const query = searchInput.value;
-  searchRecipes(query);
-})
-
-
 document.body.addEventListener('keyup', function(event){
   event.preventDefault();
-  if(event.keyCode === 13){
-    btn_mobile.click()
-  }
   if(event.code === 'Enter'){
     const query = searchInput.value;
     searchRecipes(query);
@@ -69,7 +59,6 @@ let limit = 10;
 window.addEventListener('scroll', async function() {
   if (window.scrollY + window.innerHeight >= document.documentElement.scrollHeight) {
     currentPage+=limit;
-    btn_mobile.click();
     const query = searchInput.value;
     const response = await fetch(`https://api.spoonacular.com/recipes/complexSearch?apiKey=${apiKey}&query=${query}&offset=${currentPage}&number=${limit}`);
     try{const data = await response.json();
