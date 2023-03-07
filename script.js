@@ -69,6 +69,7 @@ let limit = 10;
 window.addEventListener('scroll', async function() {
   if (window.scrollY + window.innerHeight >= document.documentElement.scrollHeight) {
     currentPage+=limit;
+    btn_mobile.click();
     const query = searchInput.value;
     const response = await fetch(`https://api.spoonacular.com/recipes/complexSearch?apiKey=${apiKey}&query=${query}&offset=${currentPage}&number=${limit}`);
     try{const data = await response.json();
