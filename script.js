@@ -2,8 +2,18 @@ const apiKey = 'b02da1fe54764d10b9cb8afc0e7353e4';
 const searchInput = document.querySelector('#search');
 const recipeContainer = document.querySelector('#recipes');
 
+const btn_mobile = document.getElementById('btn-mobile')
+btn_mobile.addEventListener('click', function(){
+  const query = searchInput.value;
+  searchRecipes(query);
+})
+
+
 document.body.addEventListener('keyup', function(event){
   event.preventDefault();
+  if(event.keyCode === 13){
+    btn_mobile.click()
+  }
   if(event.code === 'Enter'){
     const query = searchInput.value;
     searchRecipes(query);
