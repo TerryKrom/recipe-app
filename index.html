@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="global.css">
+    <title>Recipe App</title>
+</head>
+<body>
+    <header>
+        <nav id="header">
+          <a href="#" class="logo">Recipe App</a>
+          <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="https://spoonacular.com/recipes">Recipes</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+          <div class="menu-hide" onmouseleave="off()">
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="https://spoonacular.com/recipes" target="_blank">Recipes</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                </ul>
+          </div>
+          <div class="burger" id="burger-menu">
+            <div class="line"></div>
+            <div class="line"></div>
+            <div class="line"></div>
+          </div>
+        </nav>
+      </header>
+      <div class="separator"></div>
+      <input type="text" id="search" placeholder="Search recipes, ingredients, etc...">
+	<div id="recipes"></div>
+	<div class="separator"></div>
+  <button onclick="back_to_top()" id="btn-top">Back to Top</button>
+    <script src="script.js"></script>
+</body>
+</html>
