@@ -2,13 +2,25 @@ const apiKey = 'b02da1fe54764d10b9cb8afc0e7353e4';
 const searchInput = document.querySelector('#search');
 const recipeContainer = document.querySelector('#recipes');
 
+
 document.body.addEventListener('keyup', function(event){
   event.preventDefault();
   if(event.code === 'Enter'){
     const query = searchInput.value;
+    let sub = document.getElementById('sub')
+    sub.addEventListener('click', searchRecipes(query))
+    sub.click()
     searchRecipes(query);
     }
 });
+
+let btn = document.getElementById('add')
+btn.addEventListener('click', function(event){
+  event.preventDefault();
+  const query = searchInput.value;
+  searchRecipes(query)
+  }
+);
 
 const searchRecipes = async (query) => {
   try {
