@@ -59,10 +59,19 @@ const renderRecipe = (recipe) => {
   viewMoreLink.target = '_blank'
   viewMoreLink.textContent = 'View More';
 
+  const div1 = document.createElement('div');
+  const div2 = document.createElement('div');
 
-  recipeCard.appendChild(title);
-  recipeCard.appendChild(image);
-  recipeCard.appendChild(viewMoreLink)
+  div1.classList.add('image-container');
+  div2.classList.add('text-container');
+
+  div1.appendChild(image);
+  div2.appendChild(title);
+  div2.appendChild(viewMoreLink);
+  
+  recipeCard.appendChild(div2);
+  recipeCard.appendChild(div1);
+  
   recipeContainer.appendChild(recipeCard);
 }
 let currentPage = 1;
@@ -87,8 +96,11 @@ let btn_top = document.getElementById("btn-top");
 // When the user scrolls down 20px from the top of the document, show the button
 window.onscroll = function() {scrollFunction()};
 
-const scrollFunction = () => {    if (document.body.scrollTop > 50 || document.documentElement.scrollTop > 50) {
-    btn_top.style.display = "block";
+const scrollFunction = () => {
+  if (document.body.scrollTop > 50 || document.documentElement.scrollTop > 50) {
+    if(window.screenX > 540){
+      btn_top.style.display = "block";
+    }
   } else {
     btn_top.style.display = "none";
   }
