@@ -1,15 +1,18 @@
-@import url('https://fonts.googleapis.com/css2?family=Outfit&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100;200;300;400&family=Quicksand:wght@300;400;500&display=swap');
 
 *{
     padding: 0;
     margin: 0;
     box-sizing: border-box;
-    font-family: "Outfit", sans-serif;
-    transition: 0.3s linear;
+    font-family: "Quicksand", sans-serif;
+    transition: 0.3s ease-in-out;
 }
 
+body{
+  background: radial-gradient(circle at 24.1% 68.8%, #101010 0%, #000000 99.4%);
+}
 header {
-    background-color: #126eb4;
+    background-color: #252525;
     padding: 10px;
     position: fixed;
     top: 0;
@@ -24,18 +27,18 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    max-width: 1200px;
-    margin: 0 auto;
+    margin: 0 auto;  
   }
+
   
   .logo {
     font-size: 24px;
-    font-weight: 700;
     text-transform: uppercase;
-    letter-spacing: 2px;
+    letter-spacing: 3px;
+    font-weight: 300;
     color:  #fff;
     text-decoration: none;
-    margin-left: 10px;
+    margin-left: 20px;
 }
   
   .nav-links {
@@ -49,15 +52,21 @@ header {
   .nav-links li a {
     color: #fff;
     text-decoration: none;
-    padding: 10px;
     border-radius: 5px;
     transition: background-color 0.2s ease;
   }
   
-  .nav-links li a:hover {
-    background-color: #0787ea;
+  .nav-links li a::after {
+    content: '';
+    display: block;
+    width: 0;
+    height: 2px;
+    background: #e0a029;
+    transition: width .3s;
   }
-  
+  .nav-links li a:hover::after{
+    width: 100%;
+  }
   .burger {
     display: none;
     cursor: pointer;
@@ -125,9 +134,7 @@ header {
   .menu-hide{
     display: none;
 }
-.menu-hide ul li:first-child{
-    background-color: #0787ea;
-}
+
   .menu-hide.open{
     display: flex;
     flex-direction: column;
@@ -136,7 +143,7 @@ header {
     width: 130px;
     height: 200px;
     right: 0;
-    background-color: #126eb4;
+    background-color: #fff;
     margin-top: 256px;
     margin-right: 0px;
     animation: appear 0.3s linear;
@@ -155,37 +162,84 @@ header {
 }
 
 
-  .menu-hide ul{
+.menu-hide ul{
     list-style: none;
-  }
-  .menu-hide li{
+}
+
+.menu-hide li{
     height: 50px;
     display: flex;
     align-items: center;
     justify-content: center;
     cursor: pointer;
-  }
-  .menu-hide li:hover{
-    transition: 0.2s ease-in-out;
-    background-color: #0787ea;
-  }
-  .menu-hide a{
+}
+
+.menu-hide li:hover{
+    opacity: 0.7;
+}
+
+.menu-hide a{
     text-decoration: none;
-    color: #fff;
-  }
-  .separator{
+    color: #000;
+    font-weight: 500;
+}
+
+.separator{
     width: 100%;
-    height: 75px;
+    height: 50px;
 }
-img{
-    width: 350px;
-    border-radius: 5px;
-    border: 2px solid #126eb496;
+
+
+.banner{
+  width: 100%;
+  height: 540px;
+  background: url('background-black.png') center center no-repeat;
+  background-size: cover;
+  color: #fff;
+  display: flex;
+  justify-content: start;
+  align-items: start;
+  flex-direction: column;
 }
-img:hover{
-    transition: 0.2s ease-in-out;
-    border-color: #0787ea;
+
+.banner-text{
+  border-left: 2px solid #000;
+  width: 60%;
+  height: 100%;
 }
+
+.banner-text h2, .banner-text h3{
+  margin: 25px;
+}
+.banner-text h2{
+  font-size: 3rem;
+  font-weight: 100;
+  animation: appear 1.5s linear;
+}
+
+@keyframes appear{
+  0%{
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  25%{
+    opacity: 0.25;
+    transform: translateY(15px);
+  }
+  50%{
+    opacity: 0.50;
+    transform: translateY(10px);
+  }
+  75%{
+    opacity: 0.75;
+    transform: translateY(5px);
+  }
+  100%{
+    opacity: 1;
+    transform: translateY(0px);
+  }
+}
+
 
 #recipes {
     display: flex;
@@ -193,39 +247,59 @@ img:hover{
     justify-content: center;
     margin-top: 20px;
 }
+
 .recipe-card{
-    height: 400px;
-    width: 400px;
-    border: 2px solid #126eb496;
-    border-radius: 15px;
+    height: 300px;
+    width: 700px;
+    border: 2px solid #303030;
+    border-radius: 10px;
     display: flex;
     align-items: center;
     justify-content: space-around;
-    flex-direction: column;
     margin: 10px;
 }
 
+.image-container, .text-container{
+  width: 50%;
+  height: 100%;
+}
+
+.image-container img{
+  width: 100%;
+  height: 100%;
+  border-radius: 5px;
+  border-top-right-radius: 0px;
+  border-bottom-right-radius: 0px;
+}
+
+.text-container{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: column;
+}
 .recipe-card h2{
-    margin-left: 5px;
-    font-size: 20px;
-    color: #126eb4;
+    font-size: 1.7rem;
+    color: #fff;
+    font-weight: 200;
+    margin: 20px;
 }
 
 .recipe-card a{
-    color: white;
-    background-color: #0787ea;
-    width: 150px;
-    height: 30px;
-    border-radius: 25px;
+    color: #000;
+    background-color: #fff;
+    width: 300px;
+    height: 40px;
+    border-radius: 5px;
     display: flex;
     justify-content: center;
     align-items: center;
     text-decoration: none;
-    cursor: pointer
+    margin-bottom: 20px;
+    font-weight: 500;
 }
 .recipe-card a:hover{
-    transition: 0.2s ease-in-out;
-    background-color: #126eb4;
+    opacity: 0.7;
 }
 #footer{
     width: 100%;
@@ -237,6 +311,7 @@ img:hover{
     justify-content: center;
     flex-direction: column;
 }
+
 #btn-top{
   display: none; /* Hidden by default */
   position: fixed; /* Fixed/sticky position */
@@ -245,14 +320,15 @@ img:hover{
   z-index: 99; /* Make sure it does not overlap */
   border: none; /* Remove borders */
   outline: none; /* Remove outline */
-  background-color: #0787ea; /* Set a background color */
-  color: white; /* Text color */
+  background-color: #fff; /* Set a background color */
+  color: #000; /* Text color */
   cursor: pointer; /* Add a mouse pointer on hover */
-  width: 150px;
-  height: 30px;
+  width: 200px;
+  height: 50px;
   border-radius: 10px; /* Rounded corners */
-  font-size: 18px; /* Increase font size */
+  font-size: 20px; /* Increase font size */
 }
+
 .main, .msg-container{
   display: flex;
   align-items: center;
@@ -316,37 +392,77 @@ img:hover{
   opacity: 0;
 }
 
+@media only screen and (min-width: 540px){
+  #btn-top{
+    display: none;
+  }
+}
 
 
 input:focus{
   outline: 0;
 }
+
 .input-recipe{
-  width: 350px;
-  height: 40px;
+  width: 40vw;
+  height: 50px;
   border-radius: 10px;
-  border: 2px solid #126eb4;
+  border: 2px solid #000;
   text-indent: 5px;
-  margin-bottom: 30px;
   font-size: 15px;
+  font-weight: 500;
 }
 
 .inputs{
-  margin-bottom: 0px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 30px;
+}
+
+.text-central{
+  color: #fff;
+  margin: 0px 25px 0px 25px;
+  font-size: 2rem;
+  font-weight: 200;
+  width: 50%;
+}
+
+.line{
+  background-color: #fff;
+  width: 75%;
+  height: 3px;
+  border-radius: 5px;
+  margin: 3px 3px 3px 0px;
+}
+
+.search-container{
+  margin: 0px 25px 0px 25px;
   display: flex;
   justify-content: center;
   align-items: center;
 }
+
 .btn-s{
-  width: 40px;
-  height: 40px;
+  width: 50px;
+  height: 50px;
   border-radius: 8px;
   background-color: #fff;
-  border: 2px solid #126eb4;
-  color: #126eb4;
-  font-size: 18px;
+  border: 2px solid #000;
+  color: #000;
   transition: 0.2s ease-in-out;
-  margin-bottom: 30px;
   cursor: pointer;
   margin-left: 5px;
+}
+
+/* Define a cor de fundo da scrollbar */
+body::-webkit-scrollbar {
+  width: 10px;
+  background-color: black;
+}
+
+/* Define a aparência do thumb da scrollbar */
+body::-webkit-scrollbar-thumb {
+  background-color: #e0a029;
+  border-radius: 5px;
 }
