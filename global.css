@@ -143,7 +143,7 @@ header {
     width: 130px;
     height: 200px;
     right: 0;
-    background-color: #fff;
+    background-color: #000;
     margin-top: 256px;
     margin-right: 0px;
     animation: appear 0.3s linear;
@@ -180,7 +180,7 @@ header {
 
 .menu-hide a{
     text-decoration: none;
-    color: #000;
+    color: #fff;
     font-weight: 500;
 }
 
@@ -328,69 +328,6 @@ header {
   height: 50px;
   border-radius: 10px; /* Rounded corners */
   font-size: 20px; /* Increase font size */
-}
-
-.main, .msg-container{
-  display: flex;
-  align-items: center;
-  flex-direction: column;
-}
-.msg-container{
-  width: 400px;
-  height: 375px;
-  border: 2px solid #0787ea;
-  border-radius: 15px;
-}
-.msg{
-  margin: 10px;
-}
-.img-card{
-  width: 150px;
-  border-radius: 100px;
-  margin: 20px 0px 20px 0px;
-}
-.br-icon{
-  width: 20px;
-  border: none;
-  padding: 0;
-}
-.social{
-  list-style: none;
-  width: 300px;
-  height: 75px;
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  cursor: pointer;
-}
-.social li{
-  background-color: #404040;
-  width: 50px;
-  height: 50px;
-  border-radius: 50px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  transition: 0.2s ease-in-out;
-}
-.social a{
-  text-decoration: none;
-  color: #fff;
-}
-.social li:nth-child(1):hover{
-  background-color: #000;
-}
-.social li:nth-child(2):hover{
-  background-color: #0787ea;
-}
-.social li:nth-child(3):hover{
-  background-color: #d63d94;
-}
-.social li:nth-child(4):hover{
-  background-color: #3d12b4;
-}
-#btn-mobile{
-  opacity: 0;
 }
 
 @media only screen and (min-width: 540px){
