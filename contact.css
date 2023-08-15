@@ -34,3 +34,10 @@
   .social li:nth-child(4):hover{
     background-color: #3d12b4;
   }
+
+  body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
