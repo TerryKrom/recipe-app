@@ -1,0 +1,36 @@
+
+.social{
+    list-style: none;
+    width: 300px;
+    height: 75px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    cursor: pointer;
+  }
+  .social li{
+    background-color: #404040;
+    width: 50px;
+    height: 50px;
+    border-radius: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 0.2s ease-in-out;
+  }
+  .social a{
+    text-decoration: none;
+    color: #fff;
+  }
+  .social li:nth-child(1):hover{
+    background-color: #000;
+  }
+  .social li:nth-child(2):hover{
+    background-color: #0787ea;
+  }
+  .social li:nth-child(3):hover{
+    background-color: #d63d94;
+  }
+  .social li:nth-child(4):hover{
+    background-color: #3d12b4;
+  }
